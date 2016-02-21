@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="511.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TurmaController">
+   <children>
+      <TableView fx:id="tabelaTurma" layoutX="67.0" layoutY="26.0" onMouseClicked="#mouseTable" prefHeight="200.0" prefWidth="442.0">
+        <columns>
+          <TableColumn fx:id="codColuna" prefWidth="83.0" text="Código" />
+          <TableColumn fx:id="descricaoColuna" prefWidth="237.0" text="Descrição da Turma" />
+            <TableColumn fx:id="horarioColuna" prefWidth="121.0" text="Horário" />
+        </columns>
+      </TableView>
+      <HBox layoutX="67.0" layoutY="433.0" spacing="15.0">
+         <children>
+            <Button fx:id="bt_novo" mnemonicParsing="false" onAction="#onNew" prefWidth="65.0" text="Novo" />
+            <Button fx:id="bt_salvar" disable="true" mnemonicParsing="false" onAction="#onSave" prefWidth="65.0" text="Salvar" />
+            <Button fx:id="bt_editar" disable="true" mnemonicParsing="false" onAction="#onEdit" prefWidth="65.0" text="Editar" />
+            <Button fx:id="bt_excluir" disable="true" mnemonicParsing="false" onAction="#onDelete" prefWidth="65.0" text="Excluir" />
+            <Button fx:id="bt_cancelar" mnemonicParsing="false" onAction="#onCancel" prefWidth="65.0" text="Cancelar" />
+         </children>
+      </HBox>
+      <Label layoutX="74.0" layoutY="267.0" text="Código.:" />
+      <Label layoutX="61.0" layoutY="322.0" text="Descrição.:" />
+      <Label layoutX="73.0" layoutY="370.0" text="Horário.:" />
+      <TextField fx:id="txt_codigo" disable="true" layoutX="133.0" layoutY="259.0" prefHeight="33.0" prefWidth="79.0" />
+      <TextField fx:id="txt_descricao" disable="true" layoutX="133.0" layoutY="310.0" prefHeight="33.0" prefWidth="242.0" />
+      <TextField fx:id="txt_horario" disable="true" layoutX="133.0" layoutY="358.0" prefHeight="33.0" prefWidth="242.0" />
+   </children>
+</AnchorPane>

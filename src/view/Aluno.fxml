@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlunoController">
+   <children>
+      <SplitPane layoutX="108.0" layoutY="118.0" prefHeight="600.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane prefHeight="538.0" prefWidth="751.0">
+               <children>
+                  <GridPane layoutY="16.0" prefHeight="322.0" prefWidth="745.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" maxWidth="148.0" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="316.0" minWidth="0.0" prefWidth="316.0" />
+                        <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="ALWAYS" maxWidth="206.0" minWidth="10.0" prefWidth="53.0" />
+                        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="286.0" minWidth="10.0" prefWidth="276.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Código:">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Nome:" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Sexo:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Nascimento:" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Endereço:" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Serie:" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="UF:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="CEP:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Mãe:" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Pai:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Telefone:" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Ensino:" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txt_codigo" disable="true" editable="false" prefHeight="29.0" prefWidth="75.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="txt_nome" disable="true" prefHeight="29.0" prefWidth="311.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txt_endereco" disable="true" prefHeight="29.0" prefWidth="315.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txt_cep" disable="true" prefHeight="29.0" prefWidth="185.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <TextField fx:id="txt_mae" disable="true" prefHeight="29.0" prefWidth="315.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txt_pai" disable="true" prefHeight="29.0" prefWidth="196.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <TextField fx:id="txt_telefone" disable="true" prefHeight="29.0" prefWidth="308.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="txt_ensino" disable="true" prefHeight="29.0" prefWidth="195.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                        <DatePicker fx:id="dataAluno" disable="true" editable="false" prefHeight="29.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cb_sexo" disable="true" prefHeight="29.0" prefWidth="153.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cb_serie" disable="true" prefHeight="29.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ComboBox fx:id="cb_uf" disable="true" prefHeight="29.0" prefWidth="74.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="tabelaAluno" layoutX="8.0" layoutY="404.0" onMouseClicked="#onClicked" prefHeight="173.0" prefWidth="763.0">
+                    <columns>
+                      <TableColumn fx:id="codAluno" prefWidth="60.0" text="Código" />
+                      <TableColumn fx:id="nomeAluno" prefWidth="220.0" text="Nome" />
+                        <TableColumn fx:id="sexoAluno" text="Sexo" />
+                        <TableColumn fx:id="enderecoAluno" prefWidth="220.0" text="Endereço" />
+                        <TableColumn fx:id="cepAluno" prefWidth="90.0" text="CEP" />
+                        <TableColumn fx:id="nascimentoAluno" prefWidth="135.0" text="Nascimento" />
+                        <TableColumn fx:id="ufAluno" prefWidth="40.0" text="UF" />
+                        <TableColumn fx:id="maeAluno" prefWidth="220.0" text="Mãe" />
+                        <TableColumn fx:id="paiAluno" prefWidth="220.0" text="Pai" />
+                        <TableColumn fx:id="telefoneAluno" prefWidth="180.0" text="Telefone" />
+                        <TableColumn fx:id="serieAluno" prefWidth="150.0" text="Serie" />
+                        <TableColumn fx:id="ensinoAluno" prefWidth="200.0" text="Ensino" />
+                    </columns>
+                  </TableView>
+                  <HBox layoutX="58.0" layoutY="359.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="bt_novo" mnemonicParsing="false" onAction="#onNew" prefWidth="60.0" text="Novo" />
+                        <Button fx:id="bt_salvar" disable="true" mnemonicParsing="false" onAction="#onSave" prefWidth="60.0" text="Salvar" />
+                        <Button fx:id="bt_editar" disable="true" mnemonicParsing="false" onAction="#onEdit" prefWidth="60.0" text="Editar" />
+                        <Button fx:id="bt_excluir" disable="true" mnemonicParsing="false" onAction="#onDelete" prefWidth="60.0" text="Excluir" />
+                        <Button fx:id="bt_limpar" mnemonicParsing="false" onAction="#onCancel" text="Limpar Campos" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
