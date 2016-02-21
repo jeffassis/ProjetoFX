@@ -131,25 +131,19 @@ public class DisciplinaController implements Initializable {
      */
     @FXML
     public void onEdit() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Mensagem");
-        alert.setHeaderText("");
-        alert.setContentText("Deseja excluir?");
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK) {
-            //verificamos se a tabela foi selecionada
-            if (tabelaDisciplina.getSelectionModel().getSelectedIndex() != -1) {
-                //habilito o botão salvar e o texto
-                this.bt_salvar.setDisable(false);
-                this.txt_descricao.setDisable(false);
-                this.disciplinaModel = tabelaDisciplina.getSelectionModel().getSelectedItem();
-                txt_codigo.setText(Integer.toString(disciplinaModel.getCodigo()));
-                txt_descricao.setText(disciplinaModel.getDescricao());
-                flag = 2;
-            } else {
-                alert("Por favor selecione um aluno na Tabela");
-            }
+        //verificamos se a tabela foi selecionada
+        if (tabelaDisciplina.getSelectionModel().getSelectedIndex() != -1) {
+            //habilito o botão salvar e o texto
+            this.bt_salvar.setDisable(false);
+            this.txt_descricao.setDisable(false);
+            this.disciplinaModel = tabelaDisciplina.getSelectionModel().getSelectedItem();
+            txt_codigo.setText(Integer.toString(disciplinaModel.getCodigo()));
+            txt_descricao.setText(disciplinaModel.getDescricao());
+            flag = 2;
+        } else {
+            alert("Por favor selecione um aluno na Tabela");
         }
+
     }
 
     /**
@@ -157,13 +151,20 @@ public class DisciplinaController implements Initializable {
      */
     @FXML
     public void onDelete() {
-        DisciplinaModel disciplinaModel = tabelaDisciplina.getItems().get(tabelaDisciplina.getSelectionModel().getSelectedIndex());
-        if (DisciplinaDAO.executeUpdates(disciplinaModel, DisciplinaDAO.DELETE)) {
-            tabelaDisciplina.getItems().remove(tabelaDisciplina.getSelectionModel().getSelectedIndex());
-            alert("Excluído com sucesso!");
-            posAcao();
-        } else {
-            alert("Não foi possivel excluir");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Mensagem");
+        alert.setHeaderText("");
+        alert.setContentText("Deseja excluir?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            DisciplinaModel disciplinaModel = tabelaDisciplina.getItems().get(tabelaDisciplina.getSelectionModel().getSelectedIndex());
+            if (DisciplinaDAO.executeUpdates(disciplinaModel, DisciplinaDAO.DELETE)) {
+                tabelaDisciplina.getItems().remove(tabelaDisciplina.getSelectionModel().getSelectedIndex());
+                alert("Excluído com sucesso!");
+                posAcao();
+            } else {
+                alert("Não foi possivel excluir");
+            }
         }
     }
 
