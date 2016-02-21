@@ -8,11 +8,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
+ * Classe que contém o método main da Aplicação
  *
  * @author jeff-
  */
 public class Launch extends Application {
 
+    /**
+     * Sobrecarga do método start na Class Launch, passando um param
+     * primaryStage para ser carregado o FXML Login. Lançando uma IOException
+     *
+     * @param primaryStage
+     * @throws IOException
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
 
@@ -26,10 +34,11 @@ public class Launch extends Application {
     }
 
     /**
+     * Método main passando os argumentos da Class Launch
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
     }
-
 }
